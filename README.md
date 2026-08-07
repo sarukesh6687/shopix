@@ -7,10 +7,10 @@ Retail Individual ShopEZ is your one-stop destination for effortless online shop
 ## DEMO AND GITHUB REPOSITORY LINKS
 
 > [!IMPORTANT]
-> 📁 **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing  
-> 🌐 **Live Vercel Frontend:** https://shopez-frontend.vercel.app  
+> 📁 **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing  
+> 🌐 **Live Vercel Frontend:** https://shopix-ruddy.vercel.app  
 > ⚡ **Live Render Backend API:** https://shopez-backend-2938.onrender.com  
-> 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix  
+> 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix.git  
 > 🔑 **Pre-configured Admin Account:**
 > - **Account Email:** `admin@shopez.com`
 > - **Password:** `admin123`
@@ -143,7 +143,7 @@ The application follows a decoupled client-server architecture:
 
 ## 2. PROJECT DOCUMENTATION
 
-> 📁 **Project Documentation Drive Folder:** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing
+> 📁 **Project Documentation Drive Folder:** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing
 
 ### System Architecture Overview
 
@@ -261,9 +261,9 @@ npm start
 
 ## DEMO & EVALUATION LINKS SUMMARY
 
-- **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing
-- **Live Vercel Frontend:** https://shopez-frontend.vercel.app
+- **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing
+- **Live Vercel Frontend:** https://shopix-ruddy.vercel.app
 - **Live Render Backend API:** https://shopez-backend-2938.onrender.com
-- **GitHub Repository:** https://github.com/sarukesh6687/shopix
+- **GitHub Repository:** https://github.com/sarukesh6687/shopix.git
 - **Admin Email:** `admin@shopez.com`
 - **Admin Password:** `admin123`
