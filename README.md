@@ -9,7 +9,7 @@ Retail Individual ShopEZ is your one-stop destination for effortless online shop
 > [!IMPORTANT]
 > 🌐 **Live Vercel Frontend:** https://shopez-frontend.vercel.app  
 > ⚡ **Live Render Backend API:** https://shopez-backend-2938.onrender.com  
-> 📦 **GitHub Repository:** https://github.com/sarukesh6687/NASSCOM  
+> 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix  
 > 🔑 **Pre-configured Admin Account:**
 > - **Account Email:** `admin@shopez.com`
 > - **Password:** `admin123`
@@ -260,6 +260,6 @@ npm start
 
 - **Live Vercel Frontend:** https://shopez-frontend.vercel.app
 - **Live Render Backend API:** https://shopez-backend-2938.onrender.com
-- **GitHub Repository:** https://github.com/sarukesh6687/NASSCOM
+- **GitHub Repository:** https://github.com/sarukesh6687/shopix
 - **Admin Email:** `admin@shopez.com`
 - **Admin Password:** `admin123`
