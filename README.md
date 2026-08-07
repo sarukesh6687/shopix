@@ -7,6 +7,7 @@ Retail Individual ShopEZ is your one-stop destination for effortless online shop
 ## DEMO AND GITHUB REPOSITORY LINKS
 
 > [!IMPORTANT]
+> 📁 **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing  
 > 🌐 **Live Vercel Frontend:** https://shopez-frontend.vercel.app  
 > ⚡ **Live Render Backend API:** https://shopez-backend-2938.onrender.com  
 > 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix  
@@ -142,6 +143,8 @@ The application follows a decoupled client-server architecture:
 
 ## 2. PROJECT DOCUMENTATION
 
+> 📁 **Project Documentation Drive Folder:** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing
+
 ### System Architecture Overview
 
 The system utilizes a decoupled full-stack JavaScript architecture:
@@ -258,6 +261,7 @@ npm start
 
 ## DEMO & EVALUATION LINKS SUMMARY
 
+- **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/10BR0kiJVSCxrkNVg6F-w9Ctqtumv4MoF?usp=sharing
 - **Live Vercel Frontend:** https://shopez-frontend.vercel.app
 - **Live Render Backend API:** https://shopez-backend-2938.onrender.com
 - **GitHub Repository:** https://github.com/sarukesh6687/shopix
