@@ -18,9 +18,12 @@ export function ProductCard({ product }) {
   const { user } = useAuth();
   const [added, setAdded] = useState(false);
 
-  const finalPrice = product.discountPercent > 0
-    ? (product.price * (1 - product.discountPercent / 100)).toFixed(2)
-    : product.price.toFixed(2);
+  if (!product) return null;
+
+  const priceNum = Number(product.price || 0);
+  const discount = Number(product.discountPercent || 0);
+  const finalPrice = discount > 0 ? (priceNum * (1 - discount / 100)).toFixed(2) : priceNum.toFixed(2);
+
 
   const handleAdd = async (e) => {
     e.preventDefault();

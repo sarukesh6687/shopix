@@ -34,7 +34,8 @@ export default function Checkout() {
     } finally { setLoading(false); }
   };
 
-  if (cart.items.length === 0) { navigate('/cart'); return null; }
+  if (!cart?.items || cart.items.length === 0) { navigate('/cart'); return null; }
+
 
   return (
     <div className="container py-4" style={{ maxWidth: 960 }}>
