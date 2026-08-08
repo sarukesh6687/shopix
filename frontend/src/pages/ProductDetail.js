@@ -18,9 +18,14 @@ export default function ProductDetail() {
   const [added, setAdded] = useState(false);
 
   useEffect(() => {
-    api.get(`/products/${id}`).then(r => setProduct(r.data));
-    api.get(`/reviews/${id}`).then(r => setReviews(r.data));
+    api.get(`/products/${id}`)
+      .then(r => setProduct(r.data))
+      .catch(() => {});
+    api.get(`/reviews/${id}`)
+      .then(r => setReviews(Array.isArray(r.data) ? r.data : []))
+      .catch(() => setReviews([]));
   }, [id]);
+
 
   const handleAddToCart = async () => {
     await addToCart(id, qty);

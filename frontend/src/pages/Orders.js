@@ -123,7 +123,12 @@ export function OrderTracker({ order }) {
 export function Orders() {
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => { api.get('/orders').then(r => setOrders(r.data)); }, []);
+  useEffect(() => { 
+    api.get('/orders')
+      .then(r => setOrders(Array.isArray(r.data) ? r.data : []))
+      .catch(() => setOrders([])); 
+  }, []);
+
 
   return (
     <div className="container py-4">
