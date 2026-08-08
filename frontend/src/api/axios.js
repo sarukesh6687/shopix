@@ -1,6 +1,13 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+const isLocalhost = typeof window !== 'undefined' && 
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+const defaultBaseURL = isLocalhost ? '/api' : 'https://shopez-backend-2938.onrender.com/api';
+
+const api = axios.create({ 
+  baseURL: process.env.REACT_APP_API_URL || defaultBaseURL 
+});
 
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
@@ -9,3 +16,4 @@ api.interceptors.request.use(config => {
 });
 
 export default api;
+

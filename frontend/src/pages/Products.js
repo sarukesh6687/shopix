@@ -28,7 +28,9 @@ export default function Products() {
   const page = searchParams.get('page') || 1;
 
   useEffect(() => { 
-    api.get('/products/categories').then(r => setCategories(r.data)); 
+    api.get('/products/categories')
+      .then(r => setCategories(Array.isArray(r.data) ? r.data : []))
+      .catch(() => setCategories([])); 
     setSearchInput(search);
   }, [search]);
 
@@ -37,12 +39,19 @@ export default function Products() {
     if (search) params.set('search', search);
     if (category) params.set('category', category);
     if (sort) params.set('sort', sort);
-    api.get(`/products?${params}`).then(r => { 
-      setProducts(r.data.products); 
-      setPages(r.data.pages); 
-      setTotal(r.data.total); 
-    });
+    api.get(`/products?${params}`)
+      .then(r => { 
+        setProducts(r.data?.products || []); 
+        setPages(r.data?.pages || 1); 
+        setTotal(r.data?.total || 0); 
+      })
+      .catch(() => {
+        setProducts([]);
+        setPages(1);
+        setTotal(0);
+      });
   }, [search, category, sort, page]);
+
 
   const setParam = (key, val) => {
     const p = new URLSearchParams(searchParams);

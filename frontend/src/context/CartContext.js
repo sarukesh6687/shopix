@@ -28,16 +28,16 @@ export function CartProvider({ children }) {
     setCart(data);
   };
 
-  const clearCart = () => setCart({ items: [] });
-
-  const itemCount = cart.items.reduce((s, i) => s + i.quantity, 0);
-  const total = cart.items.reduce((s, i) => {
-    const p = i.product;
+  const items = Array.isArray(cart?.items) ? cart.items : [];
+  const itemCount = items.reduce((s, i) => s + (i?.quantity || 1), 0);
+  const total = items.reduce((s, i) => {
+    const p = i?.product;
     const price = p?.discountPercent > 0 ? p.price * (1 - p.discountPercent / 100) : p?.price || 0;
-    return s + price * i.quantity;
+    return s + price * (i?.quantity || 1);
   }, 0);
 
-  return <CartContext.Provider value={{ cart, addToCart, updateItem, removeItem, clearCart, itemCount, total }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cart: { items }, addToCart, updateItem, removeItem, clearCart, itemCount, total }}>{children}</CartContext.Provider>;
 }
+
 
 export const useCart = () => useContext(CartContext);

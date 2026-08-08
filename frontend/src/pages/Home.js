@@ -9,9 +9,14 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    api.get('/products?limit=8&sort=rating').then(r => setFeatured(r.data.products));
-    api.get('/products/categories').then(r => setCategories(r.data));
+    api.get('/products?limit=8&sort=rating')
+      .then(r => setFeatured(r.data?.products || []))
+      .catch(() => setFeatured([]));
+    api.get('/products/categories')
+      .then(r => setCategories(Array.isArray(r.data) ? r.data : []))
+      .catch(() => setCategories([]));
   }, []);
+
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText('SHOPIX10');
