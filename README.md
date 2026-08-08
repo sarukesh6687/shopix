@@ -8,6 +8,7 @@ Retail Individual ShopEZ is your one-stop destination for effortless online shop
 
 > [!IMPORTANT]
 > 📁 **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing  
+> 🌐 **Live Vercel Link:** https://shopix.vercel.app  
 > 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix.git  
 > 🔑 **Pre-configured Admin Account:**
 > - **Account Email:** `admin@shopez.com`
@@ -260,6 +261,7 @@ npm start
 ## DEMO & EVALUATION LINKS SUMMARY
 
 - **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing
+- **Live Vercel Link:** https://shopix.vercel.app
 - **GitHub Repository:** https://github.com/sarukesh6687/shopix.git
 - **Admin Email:** `admin@shopez.com`
 - **Admin Password:** `admin123`
