@@ -8,10 +8,6 @@ Retail Individual ShopEZ is your one-stop destination for effortless online shop
 
 > [!IMPORTANT]
 > 📁 **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing  
-> 💻 **Localhost Frontend Application:** http://localhost:3000  
-> ⚡ **Localhost Backend API:** http://localhost:5002  
-> 🌐 **Live Vercel Frontend:** http://localhost:3000  
-> ⚡ **Live Render Backend API:** https://shopez-backend-2938.onrender.com  
 > 📦 **GitHub Repository:** https://github.com/sarukesh6687/shopix.git  
 > 🔑 **Pre-configured Admin Account:**
 > - **Account Email:** `admin@shopez.com`
@@ -264,10 +260,6 @@ npm start
 ## DEMO & EVALUATION LINKS SUMMARY
 
 - **Project Documentation (Google Drive):** https://drive.google.com/drive/folders/1uJpqWGgphVuCg45ArVcMNFsByrO0JkHT?usp=sharing
-- **Localhost Frontend Application:** http://localhost:3000
-- **Localhost Backend API:** http://localhost:5002
-- **Live Vercel Frontend:** http://localhost:3000
-- **Live Render Backend API:** https://shopez-backend-2938.onrender.com
 - **GitHub Repository:** https://github.com/sarukesh6687/shopix.git
 - **Admin Email:** `admin@shopez.com`
 - **Admin Password:** `admin123`
