@@ -3,12 +3,30 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-mongoose.set('bufferCommands', false);
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+mongoose.set('bufferCommands', true);
+
+let isConnected = false;
+
+async function connectDB() {
+  if (isConnected) return;
+  const mongoUri = process.env.MONGO_URI;
+  if (!mongoUri) {
+    console.log('No MONGO_URI provided. Running in high-performance stateless/in-memory mode.');
+    return;
+  }
+  try {
+    await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 3000 });
+    isConnected = true;
+    console.log('Connected to MongoDB successfully.');
+    await autoSeed();
+  } catch (err) {
+    console.error('MongoDB connection notice:', err.message);
+  }
+}
 
 async function autoSeed() {
   try {
@@ -47,28 +65,14 @@ async function autoSeed() {
   }
 }
 
-async function connectDB() {
-  const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/shopez';
-  try {
-    await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 2500 });
-    console.log('Connected to MongoDB at', mongoUri);
-  } catch (err) {
-    console.log('Local MongoDB not reachable. Initializing In-Memory MongoDB...');
-    try {
-      const { MongoMemoryServer } = require('mongodb-memory-server-core');
-      const mongoServer = await MongoMemoryServer.create({ binary: { version: '4.4.26' } });
-      const uri = mongoServer.getUri();
-      await mongoose.connect(uri);
-      console.log('Connected to In-Memory MongoDB server at', uri);
-    } catch (memErr) {
-      console.error('In-Memory Mongo error:', memErr.message);
-    }
+app.use(async (req, res, next) => {
+  if (process.env.MONGO_URI && mongoose.connection.readyState === 0) {
+    await connectDB();
   }
-  await autoSeed();
-}
+  next();
+});
 
-connectDB();
-
+app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/cart', require('./routes/cart'));
@@ -76,7 +80,11 @@ app.use('/api/orders', require('./routes/orders'));
 app.use('/api/reviews', require('./routes/reviews'));
 app.use('/api/admin', require('./routes/admin'));
 
-app.use((err, req, res, next) => res.status(500).json({ message: err.message }));
+app.use((err, req, res, next) => res.status(500).json({ message: err.message || 'Internal Server Error' }));
 
-app.listen(process.env.PORT, () => console.log(`Server on port ${process.env.PORT}`));
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 5002;
+  app.listen(PORT, () => console.log(`Server on port ${PORT}`));
+}
 
+module.exports = app;
