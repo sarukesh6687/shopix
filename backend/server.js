@@ -72,13 +72,13 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', time: new Date() }));
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/products', require('./routes/products'));
-app.use('/api/cart', require('./routes/cart'));
-app.use('/api/orders', require('./routes/orders'));
-app.use('/api/reviews', require('./routes/reviews'));
-app.use('/api/admin', require('./routes/admin'));
+app.get(['/health', '/api/health'], (req, res) => res.json({ status: 'ok', time: new Date() }));
+app.use(['/api/auth', '/auth'], require('./routes/auth'));
+app.use(['/api/products', '/products'], require('./routes/products'));
+app.use(['/api/cart', '/cart'], require('./routes/cart'));
+app.use(['/api/orders', '/orders'], require('./routes/orders'));
+app.use(['/api/reviews', '/reviews'], require('./routes/reviews'));
+app.use(['/api/admin', '/admin'], require('./routes/admin'));
 
 app.use((err, req, res, next) => res.status(500).json({ message: err.message || 'Internal Server Error' }));
 
