@@ -5,14 +5,8 @@
   "outputDirectory": "frontend/build",
   "rewrites": [
     {
-      "source": "/api/:path*",
-      "destination": "https://shopix-ruddy.vercel.app/api/:path*"
-    },
-    {
       "source": "/((?!api/|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]
 }
-
-
