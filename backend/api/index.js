@@ -1,11 +1,11 @@
 let app;
 try {
-  app = require('../backend/server');
+  app = require('../server');
 } catch (e) {
   try {
     app = require('./server');
   } catch (e2) {
-    app = require('../server');
+    app = require('../../backend/server');
   }
 }
 
