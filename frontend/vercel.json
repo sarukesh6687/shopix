@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://shopez-backend-2938.onrender.com/api/:path*"
+      "destination": "https://shopix-ruddy.vercel.app/api/:path*"
     },
     {
       "source": "/((?!api/|.*\\..*).*)",

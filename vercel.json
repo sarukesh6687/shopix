@@ -1,11 +1,12 @@
 {
   "framework": "create-react-app",
-  "buildCommand": "cd frontend && npm run build",
+  "installCommand": "npm --prefix frontend install",
+  "buildCommand": "npm --prefix frontend run build",
   "outputDirectory": "frontend/build",
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://shopez-backend-2938.onrender.com/api/:path*"
+      "destination": "https://shopix-ruddy.vercel.app/api/:path*"
     },
     {
       "source": "/((?!api/|.*\\..*).*)",
@@ -13,4 +14,5 @@
     }
   ]
 }
+
 

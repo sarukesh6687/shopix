@@ -3,7 +3,7 @@ import axios from 'axios';
 const isLocalhost = typeof window !== 'undefined' && 
   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-const defaultBaseURL = isLocalhost ? 'http://localhost:5002/api' : 'https://shopez-backend-2938.onrender.com/api';
+const defaultBaseURL = isLocalhost ? 'http://localhost:5002/api' : 'https://shopix-ruddy.vercel.app/api';
 
 
 const api = axios.create({ 
