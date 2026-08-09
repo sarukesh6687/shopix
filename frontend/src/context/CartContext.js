@@ -28,6 +28,13 @@ export function CartProvider({ children }) {
     setCart(data);
   };
 
+  const clearCart = async () => {
+    try {
+      await api.delete('/cart/clear');
+    } catch (e) {}
+    setCart({ items: [] });
+  };
+
   const items = Array.isArray(cart?.items) ? cart.items : [];
   const itemCount = items.reduce((s, i) => s + (i?.quantity || 1), 0);
   const total = items.reduce((s, i) => {
@@ -39,5 +46,5 @@ export function CartProvider({ children }) {
   return <CartContext.Provider value={{ cart: { items }, addToCart, updateItem, removeItem, clearCart, itemCount, total }}>{children}</CartContext.Provider>;
 }
 
-
 export const useCart = () => useContext(CartContext);
+

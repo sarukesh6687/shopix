@@ -8,7 +8,7 @@
       "destination": "https://shopez-backend-2938.onrender.com/api/:path*"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/|.*\\..*).*)",
       "destination": "/index.html"
     }
   ]
